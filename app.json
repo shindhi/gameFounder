@@ -1,0 +1,12 @@
+{
+  "name": "GameFounder",
+  "displayName": "GameFounder",
+  "expo": {
+    "name": "GameFounder",
+    "slug": "GameFounder",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
