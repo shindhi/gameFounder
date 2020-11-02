@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { Image, Animated, ScrollView, View } from 'react-native';
+import React from 'react';
+import { Image, ScrollView, View } from 'react-native';
+import FeatherIcon from 'react-native-vector-icons/Feather';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -11,12 +12,15 @@ import {
   Header,
   ContainerForm,
   InputWrapper,
+  TextInput, 
+  InputCalendar,
+  SelectGenre,
   ContainerButton,
+  CancelButton,
+  CancelButtonText
 } from './styles';
 
 const SingUp: React.FC = () => {
-  const [scrollOfset] = useState(new Animated.Value(0));
-
   return (
     <Container>
       <Header>
@@ -35,17 +39,29 @@ const SingUp: React.FC = () => {
           />
 
           <InputWrapper>
-            <Input
-              name="date_of_birth"
-              icon="calendar"
-              placeholder="Data de nascimento"
-            />
-            <Input name="gender" icon="user" placeholder="Gênero" />
+            <InputCalendar>
+              <TextInput 
+                keyboardAppearance="dark"
+                placeholderTextColor="#666360"
+                placeholder="Data de nascimento"
+              />
+              <FeatherIcon name="calendar" size={20} color="#666360" />
+            </InputCalendar>
+
+            <SelectGenre>
+              <TextInput 
+                placeholder="Gênero"
+              />
+            </SelectGenre>
           </InputWrapper>
 
           <ContainerButton>
             <Button children="Cadastrar" />
-            <Button children="Cancelar" />
+
+            {/* Cancel Button */}
+            <CancelButton>
+              <CancelButtonText>Cancelar</CancelButtonText>
+            </CancelButton>
           </ContainerButton>
         </ContainerForm>
       </ScrollView>
