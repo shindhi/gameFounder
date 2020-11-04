@@ -36,16 +36,24 @@ export const TextInput = styled.TextInput`
   font-size: 14px;
 `;
 
-export const InputCalendar = styled.View`
+export const SelectDate = styled.View`
   width: 49%;
   height: 60px;
   padding: 0 16px;
   background: #000;
   border-radius: 4px;
-  
+
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 `;
+
+export const SelectDateText = styled.Text`
+  color: #fff;
+  font-size: 16px;
+`;
+
+export const SelectDateButton = styled.View``;
 
 export const SelectGenre = styled.View`
   width: 49%;
@@ -59,13 +67,18 @@ export const SelectGenre = styled.View`
 `;
 
 export const ContainerButton = styled.View`
-  margin-top: 40px;
+  margin-top: 30px;
+
+  align-items: center;
 `;
 
 export const CancelButton = styled.View`
-
+  padding: 10px 0;
+  margin-top: 5px;
+  margin-bottom: 10px;
 `;
 
 export const CancelButtonText = styled.Text`
-
+  color: #919191;
+  font-size: 14px;
 `;

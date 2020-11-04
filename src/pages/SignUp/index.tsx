@@ -1,6 +1,9 @@
-import React from 'react';
-import { Image, ScrollView, View } from 'react-native';
+import React, { useCallback, useMemo, useState } from 'react';
+import { Image, Platform, ScrollView } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { format } from 'date-fns';
+import pt from 'date-fns/locale/pt';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -12,15 +15,37 @@ import {
   Header,
   ContainerForm,
   InputWrapper,
-  TextInput, 
-  InputCalendar,
+  TextInput,
+  SelectDate,
+  SelectDateText,
   SelectGenre,
   ContainerButton,
   CancelButton,
-  CancelButtonText
+  CancelButtonText,
 } from './styles';
 
 const SingUp: React.FC = () => {
+  const [date, setDate] = useState(new Date());
+  const [show, setShow] = useState(false);
+
+  const formattedDate = useMemo(() => {
+    return format(date, "dd'/'MM'/'yyyy");
+  }, [date]);
+
+  const onChange = useCallback(
+    (event, selectedDate) => {
+      const currentDate = selectedDate || date;
+
+      setShow(Platform.OS === 'ios');
+      setDate(currentDate);
+    },
+    [date, SelectDate]
+  );
+
+  const handleSelectDate = useCallback(() => {
+    setShow(true);
+  }, []);
+
   return (
     <Container>
       <Header>
@@ -39,19 +64,26 @@ const SingUp: React.FC = () => {
           />
 
           <InputWrapper>
-            <InputCalendar>
-              <TextInput 
-                keyboardAppearance="dark"
-                placeholderTextColor="#666360"
-                placeholder="Data de nascimento"
+            <SelectDate>
+              <SelectDateText>{formattedDate}</SelectDateText>
+              <FeatherIcon
+                name="calendar"
+                size={20}
+                color="#666360"
+                onPress={handleSelectDate}
               />
-              <FeatherIcon name="calendar" size={20} color="#666360" />
-            </InputCalendar>
+
+              {show && (
+                <DateTimePicker
+                  value={date}
+                  display="spinner"
+                  onChange={onChange}
+                />
+              )}
+            </SelectDate>
 
             <SelectGenre>
-              <TextInput 
-                placeholder="Gênero"
-              />
+              <TextInput placeholder="Gênero" />
             </SelectGenre>
           </InputWrapper>
 
