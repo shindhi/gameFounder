@@ -6,7 +6,6 @@ const statusBarHeight =
   Platform.OS === 'android' ? Constants.statusBarHeight : 0;
 
 export const Container = styled.SafeAreaView`
-  padding: 0 20px;
   padding-top: ${statusBarHeight + 'px'};
   background: #191a1e;
 
@@ -15,6 +14,7 @@ export const Container = styled.SafeAreaView`
 
 export const HeaderProfile = styled.View`
   margin-top: 20px;
+  padding: 0 20px;
 
   flex-direction: row;
   align-items: flex-end;
@@ -48,5 +48,39 @@ export const Identifier = styled.View`
 `;
 
 export const StatusText = styled.Text`
+  color: #fff;
+`;
+
+export const ListContainer = styled.View`
+  margin-top: 85px;
+  background: #262729;
+  width: 100%;
+`;
+
+export const DescriptionList = styled.Text`
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-bottom-color: #fff;
+  border-bottom-width: 0.5px;
+`;
+
+export const ListCategory = styled.ScrollView.attrs({
+  horizontal: true,
+})`
+  padding: 8px 0 24px;
+  margin-top: 7px;
+`;
+
+export const ItemContainer = styled.TouchableOpacity`
+  width: 72px;
+  margin-right: 25px;
+`;
+
+export const CategoryImage = styled.Image`
+  border-radius: 4px;
+`;
+
+export const CategoryName = styled.Text`
   color: #fff;
 `;
