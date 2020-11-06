@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+import GamesCategory from '../pages/GamesCategory';
 
 const Auth = createStackNavigator();
 
@@ -14,10 +15,12 @@ const AuthRoutes: React.FC = () => (
         backgroundColor: '#191A1E',
       },
     }}
-    initialRouteName="SignUp"
+    initialRouteName="GamesCategory"
   >
     <Auth.Screen name="SignIn" component={SignIn} />
     <Auth.Screen name="SignUp" component={SignUp} />
+
+    <Auth.Screen name="GamesCategory" component={GamesCategory} />
   </Auth.Navigator>
 );
 
