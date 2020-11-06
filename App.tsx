@@ -25,13 +25,16 @@ const App: React.FC = () => {
 
   return (
     <NavigationContainer>
-        <StatusBar barStyle="light-content" backgroundColor="#191A1E" translucent />
-        <View style={{ flex: 1, backgroundColor: '#191A1E' }}>
-          <AppStack />
-          {/* <AppTab /> */}
-        </View>
-      </NavigationContainer>
-    );
+      <StatusBar
+        barStyle="light-content"
+        backgroundColor="#191A1E"
+        translucent
+      />
+      <View style={{ flex: 1, backgroundColor: '#191A1E' }}>
+        <AppStack />
+      </View>
+    </NavigationContainer>
+  );
 }
 
 export default App;
