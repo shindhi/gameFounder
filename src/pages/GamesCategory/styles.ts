@@ -5,9 +5,17 @@ import styled from 'styled-components/native';
 const statusBarHeight =
   Platform.OS === 'android' ? Constants.statusBarHeight : 0;
 
+  
+export const ModalFilter = styled.Modal`
+  height: 180px;
+  width: 180px;
+
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Container = styled.SafeAreaView`
   padding-top: ${statusBarHeight}px;
-  padding-bottom: ${Platform.OS === 'android' ? 100 : 40}px;
 
   flex: 1;
 `;
@@ -37,4 +45,11 @@ export const FilterInformation = styled.Text`
   color: #a3a3a5;
   font-size: 18px;
   font-family: roboto_700;
+`;
+
+export const FilterButton = styled.TouchableOpacity``;
+
+export const ContainerList = styled.ScrollView`
+  margin-top: 25px;
+  flex: 1;
 `;
