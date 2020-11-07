@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
 export const ListContainer = styled.View`
-  margin-top: 90px;
+  margin-bottom: 25px;
   background: rgba(196, 196, 196, 0.22);
   width: 100%;
 `;

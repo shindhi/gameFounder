@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';  
 import {
   Image,
   Text,
@@ -25,6 +26,8 @@ import {
 } from './styles';
 
 const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
   const [showCreateAccountButton, setShowCreateAccountButton] = useState(true);
 
   useEffect(() => {
@@ -77,7 +80,7 @@ const SignIn: React.FC = () => {
               <Button
                 style={{ width: 170 }}
                 onPress={() => {
-                  console.log('Login');
+                  navigation.navigate('Profile');
                 }}
               >
                 Entrar
