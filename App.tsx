@@ -10,7 +10,6 @@ import {
 } from '@expo-google-fonts/roboto';
 
 import AppStack from './src/routes/AppStack';
-import AppTab from './src/routes/AppTabs';
 
 const App: React.FC = () => {
   let [fontsLoaded] = useFonts({
