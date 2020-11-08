@@ -1,3 +1,12 @@
 import styled from 'styled-components/native';
+import { Platform } from 'react-native';
+import Constants from 'expo-constants';
 
-export const Container = styled.View``;
+const statusBarHeight =
+  Platform.OS === 'android' ? Constants.statusBarHeight : 0;
+
+export const Container = styled.View`
+  padding-top: ${statusBarHeight}px;
+
+  flex: 1;
+`;

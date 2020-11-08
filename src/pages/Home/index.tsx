@@ -4,7 +4,11 @@ import { Text } from 'react-native';
 import { Container } from './styles';
 
 const Home: React.FC = () => {
-  return <Text>Page Home</Text>;
+  return (
+    <Container>
+      <Text>Page Home</Text>
+    </Container>
+  );
 };
 
 export default Home;

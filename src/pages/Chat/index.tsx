@@ -4,7 +4,11 @@ import { Text } from 'react-native';
 import { Container } from './styles';
 
 const Chat: React.FC = () => {
-  return <Text>Page Chat</Text>;
+  return (
+    <Container>
+      <Text>Page Chat</Text>
+    </Container>
+  );
 };
 
 export default Chat;
