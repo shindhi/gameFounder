@@ -1,13 +1,8 @@
-import Constants from 'expo-constants';
 import styled from 'styled-components/native';
-import { Platform } from 'react-native';
 
 interface MessageContainerProps {
   user: boolean;
 }
-
-const statusBarHeight =
-  Platform.OS === 'android' ? Constants.statusBarHeight : 0;
 
 export const Header = styled.View`
   align-items: center;
@@ -35,8 +30,6 @@ export const UserName = styled.Text`
   font-size: 16px;
 `;
 
-
-
 // Styles Box mensage
 export const MessageContainer = styled.View<MessageContainerProps>`
   border-top-left-radius: 8px;
@@ -57,7 +50,7 @@ export const MessageText = styled.Text`
 // Style page: Chat
 export const Container = styled.SafeAreaView`
   padding: 0 20px;
-  padding-top: ${statusBarHeight + 10}px;
+  padding-top: 10px;
   background: #191a1e;
 
   flex: 1;

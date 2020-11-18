@@ -1,4 +1,5 @@
 import React from 'react';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { FloatingAction } from 'react-native-floating-action';
 import { useNavigation } from '@react-navigation/native';
 
@@ -21,14 +22,36 @@ import {
 
 const actions = [
   {
-    text: 'Novo grupo +',
-    name: 'bt_newGroup',
+    text: 'Novo chat +',
+    name: 'Friends',
     position: 1,
+    textBackground: 'transparent',
+    textColor: '#fff',
+    textElevation: 0,
+    color: '#FE8A07',
+    icon: (    
+      <MaterialCommunityIcons 
+        name="account-outline" 
+        color="#fff" 
+        size={22} 
+      />
+    ),
   },
   {
-    text: 'Novo chat +',
-    name: 'bt_newChat',
+    text: 'Novo grupo +',
+    name: '',
     position: 2,
+    textBackground: 'transparent',
+    textColor: '#fff',
+    textElevation: 0,
+    color: '#FE8A07',
+    icon: (
+      <MaterialCommunityIcons       
+        name="account-group-outline"
+        color="#fff"
+        size={22}
+      />
+    ),
   },
 ];
 
@@ -69,9 +92,7 @@ const Chat: React.FC = () => {
         overlayColor={'transparent'}
         actions={actions}
         buttonSize={50}
-        onPressItem={(name) => {
-          console.log(`selected button ${name}`);
-        }}
+        onPressItem={(name) => navigation.navigate(`${name}`) }
       />
     </Container>
   );

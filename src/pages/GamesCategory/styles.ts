@@ -1,10 +1,4 @@
-import Constants from 'expo-constants';
-import { Platform } from 'react-native';
 import styled from 'styled-components/native';
-
-const statusBarHeight =
-  Platform.OS === 'android' ? Constants.statusBarHeight : 0;
-
   
 export const ModalFilter = styled.Modal`
   height: 180px;
@@ -15,8 +9,6 @@ export const ModalFilter = styled.Modal`
 `;
 
 export const Container = styled.SafeAreaView`
-  padding-top: ${statusBarHeight}px;
-
   flex: 1;
 `;
 

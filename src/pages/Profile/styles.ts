@@ -1,12 +1,6 @@
-import { Platform } from 'react-native';
-import Constants from 'expo-constants';
 import styled from 'styled-components/native';
 
-const statusBarHeight =
-  Platform.OS === 'android' ? Constants.statusBarHeight : 0;
-
 export const Container = styled.SafeAreaView`
-  padding-top: ${statusBarHeight + 'px'};
   background: #191a1e;
 
   flex: 1;
