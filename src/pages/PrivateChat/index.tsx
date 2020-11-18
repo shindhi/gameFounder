@@ -1,8 +1,15 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { ScrollView } from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
+
+import User1 from '../../assets/user1.png';
 
 import {
+  Header,
+  ReturnButton,
+  UserImage,
+  UserName,
   MessageContainer,
   MessageText,
   Container,
@@ -43,6 +50,8 @@ const BoxMessage: React.FC<PropsBoxMessage> = ({ userIdMessage, message }) => {
 };
 
 const PrivateChat: React.FC = () => {
+  const navigation = useNavigation();
+
   const [textMessage, setTextMessage] = useState('');
   const [messageHistory, setMessageHistory] = useState<PropsMessage[]>(
     arrayMessageMock
@@ -64,7 +73,16 @@ const PrivateChat: React.FC = () => {
 
   return (
     <Container>
-      <Header></Header>
+      <Header>
+        <ReturnButton onPress={() => navigation.navigate('Chat')}>
+          <MaterialCommunityIcons name="arrow-left" color="#fff" size={26} />
+        </ReturnButton>
+
+        <UserImage source={User1} />
+
+        <UserName>User X</UserName>
+      </Header>
+
       <ScrollView>
         <ContainerMessages>
           {messageHistory.map((msg: PropsMessage) => (

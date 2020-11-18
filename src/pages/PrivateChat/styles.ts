@@ -9,6 +9,34 @@ interface MessageContainerProps {
 const statusBarHeight =
   Platform.OS === 'android' ? Constants.statusBarHeight : 0;
 
+export const Header = styled.View`
+  align-items: center;
+  height: 50px;
+  margin-bottom: 8px;
+
+  flex-direction: row;
+`;
+
+export const ReturnButton = styled.TouchableOpacity`
+
+`;
+
+export const UserImage = styled.Image`
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+export const UserName = styled.Text`
+  color: #fff;
+  font-family: roboto_500;
+  font-size: 16px;
+`;
+
+
+
 // Styles Box mensage
 export const MessageContainer = styled.View<MessageContainerProps>`
   border-top-left-radius: 8px;
@@ -46,9 +74,11 @@ export const ContainerSendMessage = styled.View`
 
 export const AreaText = styled.TextInput`
   border-width: 1px;
-  background: rgba(254, 138, 7, 0.65);
+  /* background: rgba(254, 138, 7, 0.65); */
+  border-color: rgba(254, 138, 7, 0.65);
+  border-width: 2px;
   border-radius: 50px;
-  color: #fff;
+  color: #FE8A07;
   padding: 10px 15px;
 
   flex: 1;

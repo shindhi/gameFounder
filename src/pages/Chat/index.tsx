@@ -1,4 +1,6 @@
 import React from 'react';
+import { FloatingAction } from 'react-native-floating-action';
+import { useNavigation } from '@react-navigation/native';
 
 import User1 from '../../assets/user1.png';
 import User2 from '../../assets/user2.png';
@@ -17,7 +19,22 @@ import {
   TagGameText,
 } from './styles';
 
+const actions = [
+  {
+    text: 'Novo grupo +',
+    name: 'bt_newGroup',
+    position: 1,
+  },
+  {
+    text: 'Novo chat +',
+    name: 'bt_newChat',
+    position: 2,
+  },
+];
+
 const Chat: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <Header>
@@ -25,7 +42,7 @@ const Chat: React.FC = () => {
       </Header>
 
       <ListChat>
-        <ChatContainer>
+        <ChatContainer onPress={() => navigation.navigate('PrivateChat')}>
           <ChatImage source={User1} />
 
           <ChatInformation>
@@ -44,7 +61,18 @@ const Chat: React.FC = () => {
             </TagGame>
           </ChatInformation>
         </ChatContainer>
+
       </ListChat>
+      <FloatingAction
+        color={'#FE8A07'}
+        distanceToEdge={10}
+        overlayColor={'transparent'}
+        actions={actions}
+        buttonSize={50}
+        onPressItem={(name) => {
+          console.log(`selected button ${name}`);
+        }}
+      />
     </Container>
   );
 };

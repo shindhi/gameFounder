@@ -22,7 +22,7 @@ export const Header = styled.View`
 `;
 
 export const HeaderText = styled.Text`
-  color: #fff;
+  color: #fff; 
   font-size: 22px;
   font-family: roboto_700;
 `;
@@ -34,7 +34,7 @@ export const ListChat = styled.ScrollView`
   flex: 1;
 `;
 
-export const ChatContainer = styled.View`
+export const ChatContainer = styled.TouchableOpacity`
   padding: 5px 0;
   margin-bottom: 15px;
 
