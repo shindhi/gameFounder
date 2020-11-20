@@ -19,11 +19,7 @@ const AppTabs: React.FC = () => {
         options={{
           tabBarLabel: 'Profile',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons
-              name="mdiAccountOutline"
-              color={color}
-              size={26}
-            />
+            <MaterialCommunityIcons name="account" color={color} size={26} />
           ),
         }}
       />

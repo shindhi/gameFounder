@@ -1,4 +1,5 @@
 import React from 'react';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Text, View } from 'react-native';
 
 import User from '../../assets/photoPerfil.png';
@@ -13,6 +14,7 @@ import {
   Identifier,
   StatusText,
   ListContainer,
+  EditListGame,
   DescriptionList,
   ListCategory,
   ItemContainer,
@@ -36,7 +38,17 @@ const Profile: React.FC = () => {
         </View>
       </HeaderProfile>
 
+      
+
       <ListContainer>
+        <EditListGame
+          onPress={() => {
+            console.log('Edit games');
+          }}
+        >
+          <MaterialCommunityIcons name="pencil-outline" size={20} color="#fff" />
+        </EditListGame>
+
         <DescriptionList>FPS e Moba</DescriptionList>
 
         <ListCategory>
