@@ -3,9 +3,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
+
 import GamesCategory from '../pages/GamesCategory';
 import PrivateChat from '../pages/PrivateChat';
 import Friends from '../pages/Friends';
+import FilteredGames from '../pages/FilteredGames';
 
 import AppTabs from './AppTabs';
 
@@ -23,12 +25,13 @@ const AuthRoutes: React.FC = () => (
   >
     <Auth.Screen name="SignIn" component={SignIn} />
     <Auth.Screen name="SignUp" component={SignUp} />
-    
+
     <Auth.Screen name="GamesCategory" component={GamesCategory} />
     <Auth.Screen name="Profile" component={AppTabs} />
 
     <Auth.Screen name="PrivateChat" component={PrivateChat} />
     <Auth.Screen name="Friends" component={Friends} />
+    <Auth.Screen name="FilteredGames" component={FilteredGames} />
   </Auth.Navigator>
 );
 
