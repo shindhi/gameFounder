@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
-import { Alert, Text, Button } from 'react-native';
+import React, { useCallback, useState } from 'react';
+import { Modal } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Provider, Portal, Modal } from 'react-native-paper';
 
 import ListGames from './components/ListGames';
 
 import {
-  ModalFilter,
+  ContainerModal,
+  ModalView,
+  ModalTitle,
+  InputGroups,
+  InputGroupsText,
+  InputModal,
+  ButtonCloseModal,
+  ButtonCloseModalText,
+
   Container,
   TitleContainer,
   TitleText,
@@ -16,48 +24,59 @@ import {
   ContainerList,
 } from './styles';
 
-// const ModalTest: React.FC = ({ children, open }) => {
-//   return (
-//     <View>
-//       <ModalFilter
-//         animationType="slide"
-//         // transparent={true}
-//         visible={open}
-//         onRequestClose={() => { Alert.alert("Eita") }}
-//       >
-//         <Button title="Fechar" onPress={() => setIsModalOpen(!isModalOpen)}>
-//           <Text>Fechar</Text>
-//         </Button>
-//       </ModalFilter>
-//     </View>
-//   );
-// }
-
 const GamesCategory: React.FC = () => {
+  const navigation = useNavigation();
+
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const showModal = () => setIsModalOpen(true);
-  const hideModal = () => setIsModalOpen(false);
-  const containerStyle = { bakcgroundColor: '#fff', padding: 20 };
+  const handleFilterGames = useCallback(() => {
+    
+    setIsModalOpen(!isModalOpen);
+
+    navigation.navigate('');
+  }, []);
 
   return (
     <>
-      <Provider>
-        <Portal>
-          <Modal visible={isModalOpen} onDismiss={hideModal} contentContainerStyle={containerStyle}>
-            <Text>Example Modal.  Click outside this area to dismiss.</Text>
-          </Modal>
-        </Portal>
-      </Provider>
-
       <Container>
+        <Modal
+          animationType="slide"
+          transparent={true}
+          visible={isModalOpen}
+        >
+          <ContainerModal>
+            <ModalView>
+              <ModalTitle>Filtro</ModalTitle>
+
+              <InputGroups>
+                <InputGroupsText>Nome do jogo</InputGroupsText>
+                <InputModal placeholder="Ex: Valorant" />
+              </InputGroups>
+
+              <InputGroups>
+                <InputGroupsText>Categorias</InputGroupsText>
+                <InputModal placeholder="Ex: FPS" />
+              </InputGroups>
+
+              <InputGroups>
+                <InputGroupsText>Gênero</InputGroupsText>
+                <InputModal placeholder="Ex: Ação" />
+              </InputGroups>
+
+              <ButtonCloseModal onPress={handleFilterGames}>
+                <ButtonCloseModalText>Filtrar</ButtonCloseModalText>
+              </ButtonCloseModal>
+            </ModalView>
+          </ContainerModal>
+        </Modal>
+        
         <TitleContainer>
           <TitleText>Categorias / Gêneros</TitleText>
         </TitleContainer>
 
         <FilterContainer>
           <FilterInformation>Selecione um(a) ou mais:</FilterInformation>
-          
+
           <FilterButton onPress={() => setIsModalOpen(!isModalOpen)}>
             <MaterialCommunityIcons
               name="filter-outline"
