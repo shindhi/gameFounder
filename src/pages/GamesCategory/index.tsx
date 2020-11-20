@@ -30,11 +30,10 @@ const GamesCategory: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleFilterGames = useCallback(() => {
-    
     setIsModalOpen(!isModalOpen);
 
-    navigation.navigate('');
-  }, []);
+    navigation.navigate('FilteredGames');
+  }, [isModalOpen]);
 
   return (
     <>
