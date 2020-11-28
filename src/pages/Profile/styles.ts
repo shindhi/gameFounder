@@ -15,6 +15,8 @@ export const HeaderProfile = styled.View`
   align-items: flex-end;
 `;
 
+export const ButtonEditProfile = styled.TouchableOpacity``;
+
 export const UserImage = styled.Image`
   width: 70px;
   height: 70px;

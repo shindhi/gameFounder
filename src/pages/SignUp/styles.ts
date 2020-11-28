@@ -56,9 +56,9 @@ export const SelectDateText = styled.Text`
 export const SelectDateButton = styled.View``;
 
 export const SelectGenre = styled.View`
+  
   width: 49%;
   height: 60px;
-  padding: 0 16px;
   background: #000;
   border-radius: 4px;
 

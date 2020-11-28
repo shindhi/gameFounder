@@ -4,10 +4,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import SignIn from '../pages/SignIn';
 import SignUp from '../pages/SignUp';
 
-import GamesCategory from '../pages/GamesCategory';
-import PrivateChat from '../pages/PrivateChat';
 import Friends from '../pages/Friends';
+import EditProfile from '../pages/EditProfile';
+import PrivateChat from '../pages/PrivateChat';
 import FilteredGames from '../pages/FilteredGames';
+import GamesCategory from '../pages/GamesCategory';
 
 import AppTabs from './AppTabs';
 
@@ -21,13 +22,14 @@ const AuthRoutes: React.FC = () => (
         backgroundColor: '#191A1E',
       },
     }}
-    // initialRouteName="GamesCategory"
+    initialRouteName="SignUp"
   >
     <Auth.Screen name="SignIn" component={SignIn} />
     <Auth.Screen name="SignUp" component={SignUp} />
 
-    <Auth.Screen name="GamesCategory" component={GamesCategory} />
     <Auth.Screen name="Profile" component={AppTabs} />
+    <Auth.Screen name="EditProfile" component={EditProfile} />
+    <Auth.Screen name="GamesCategory" component={GamesCategory} />
 
     <Auth.Screen name="PrivateChat" component={PrivateChat} />
     <Auth.Screen name="Friends" component={Friends} />

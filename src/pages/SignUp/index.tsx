@@ -3,7 +3,7 @@ import { Image, Platform, ScrollView } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
-import pt from 'date-fns/locale/pt';
+import { Picker } from '@react-native-community/picker';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -26,7 +26,8 @@ import {
 
 const SingUp: React.FC = () => {
   const [date, setDate] = useState(new Date());
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState<boolean>(false);
+  const [gender, setGender] = useState<React.ReactText>('');
 
   const formattedDate = useMemo(() => {
     return format(date, "dd'/'MM'/'yyyy");
@@ -83,7 +84,21 @@ const SingUp: React.FC = () => {
             </SelectDate>
 
             <SelectGenre>
-              <TextInput placeholder="Gênero" />
+              <Picker
+                selectedValue={gender}
+                mode="dialog"
+                style={{
+                  flex: 1,
+                  color: '#fff',
+                }}
+                onValueChange={(genderValue, genderIndex) =>
+                  setGender(genderValue)
+                }
+              >
+                <Picker.Item label="Masculino" value="m" />
+                <Picker.Item label="Feminino" value="f" />
+                <Picker.Item label="Outro" value="o" />
+              </Picker>
             </SelectGenre>
           </InputWrapper>
 
