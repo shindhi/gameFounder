@@ -29,24 +29,20 @@ const actions = [
     textColor: '#fff',
     textElevation: 0,
     color: '#FE8A07',
-    icon: (    
-      <MaterialCommunityIcons 
-        name="account-outline" 
-        color="#fff" 
-        size={22} 
-      />
+    icon: (
+      <MaterialCommunityIcons name="account-outline" color="#fff" size={22} />
     ),
   },
   {
     text: 'Novo grupo +',
-    name: '',
+    name: 'GroupChat',
     position: 2,
     textBackground: 'transparent',
     textColor: '#fff',
     textElevation: 0,
     color: '#FE8A07',
     icon: (
-      <MaterialCommunityIcons       
+      <MaterialCommunityIcons
         name="account-group-outline"
         color="#fff"
         size={22}
