@@ -4,6 +4,7 @@ export const Container = styled.SafeAreaView`
   background: #191a1e;
 
   flex: 1;
+  z-index: 1;
 `;
 
 export const HeaderProfile = styled.View`
@@ -13,6 +14,8 @@ export const HeaderProfile = styled.View`
   flex-direction: row;
   align-items: flex-end;
 `;
+
+export const ButtonEditProfile = styled.TouchableOpacity``;
 
 export const UserImage = styled.Image`
   width: 70px;
@@ -49,12 +52,29 @@ export const ListContainer = styled.View`
   margin-top: 85px;
   background: #262729;
   width: 100%;
+  position: relative;
+  z-index: 2;
+`;
+
+export const EditListGame = styled.TouchableOpacity`
+  width: 35px;
+  height: 35px;
+  border-radius: 17.5px;
+  background: #db7c0c;
+
+  position: absolute;
+  top: -17.5px;
+  right: 20px;
+  z-index: 5;
+
+  justify-content: center;
+  align-items: center;
 `;
 
 export const DescriptionList = styled.Text`
   color: #fff;
   font-size: 18px;
-  padding: 12px 20px;
+  padding: 15px 20px;
   border-bottom-color: #fff;
   border-bottom-width: 0.5px;
 `;

@@ -1,5 +1,7 @@
 import React from 'react';
-import { View } from 'react-native';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useNavigation } from '@react-navigation/native';
+import { Text, View } from 'react-native';
 
 import User from '../../assets/photoPerfil.png';
 import LeagueOfLegends from '../../assets/lol.png';
@@ -7,12 +9,14 @@ import LeagueOfLegends from '../../assets/lol.png';
 import {
   Container,
   HeaderProfile,
+  ButtonEditProfile,
   UserImage,
   UserName,
   UserStatus,
   Identifier,
   StatusText,
   ListContainer,
+  EditListGame,
   DescriptionList,
   ListCategory,
   ItemContainer,
@@ -21,10 +25,14 @@ import {
 } from './styles';
 
 const Profile: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <Container>
       <HeaderProfile>
-        <UserImage source={User} />
+        <ButtonEditProfile onPress={() => navigation.navigate('EditProfile')}>
+          <UserImage source={User} />
+        </ButtonEditProfile>
 
         <View>
           <UserName>User</UserName>
@@ -37,6 +45,14 @@ const Profile: React.FC = () => {
       </HeaderProfile>
 
       <ListContainer>
+        <EditListGame onPress={() => navigation.navigate('GamesCategory')}>
+          <MaterialCommunityIcons
+            name="pencil-outline"
+            size={20}
+            color="#fff"
+          />
+        </EditListGame>
+
         <DescriptionList>FPS e Moba</DescriptionList>
 
         <ListCategory>

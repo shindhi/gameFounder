@@ -7,6 +7,8 @@ import GamesCategory from '../pages/GamesCategory';
 import PrivateChat from '../pages/PrivateChat';
 import GroupChat from '../pages/GroupChat';
 import Friends from '../pages/Friends';
+import EditProfile from '../pages/EditProfile';
+import FilteredGames from '../pages/FilteredGames';
 
 import AppTabs from './AppTabs';
 
@@ -20,17 +22,19 @@ const AuthRoutes: React.FC = () => (
         backgroundColor: '#191A1E',
       },
     }}
-    // initialRouteName="GamesCategory"
+    // initialRouteName="SignUp"
   >
     <Auth.Screen name="SignIn" component={SignIn} />
     <Auth.Screen name="SignUp" component={SignUp} />
 
-    <Auth.Screen name="GamesCategory" component={GamesCategory} />
     <Auth.Screen name="Profile" component={AppTabs} />
+    <Auth.Screen name="EditProfile" component={EditProfile} />
+    <Auth.Screen name="GamesCategory" component={GamesCategory} />
 
     <Auth.Screen name="PrivateChat" component={PrivateChat} />
     <Auth.Screen name="GroupChat" component={GroupChat} />
     <Auth.Screen name="Friends" component={Friends} />
+    <Auth.Screen name="FilteredGames" component={FilteredGames} />
   </Auth.Navigator>
 );
 
