@@ -19,6 +19,14 @@ export const Header = styled.View`
   padding-bottom: 20px;
 `;
 
+export const UserAvatarButton = styled.TouchableOpacity``;
+
+export const Avatar = styled.Image`
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+`;
+
 export const ContainerForm = styled.View`
   flex: 1;
   padding: 0 30px;
@@ -72,7 +80,7 @@ export const ContainerButton = styled.View`
   align-items: center;
 `;
 
-export const CancelButton = styled.View`
+export const CancelButton = styled.TouchableOpacity`
   padding: 10px 0;
   margin-top: 5px;
   margin-bottom: 10px;

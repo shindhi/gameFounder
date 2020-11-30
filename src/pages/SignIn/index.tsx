@@ -101,7 +101,7 @@ const SignIn: React.FC = () => {
       {showCreateAccountButton && (
         <CreateAccountButton
           onPress={() => {
-            console.log('create account');
+            navigation.navigate('SignUp');
           }}
         >
           <Text style={{ color: '#6D6D6D' }}>Não possui uma conta? </Text>

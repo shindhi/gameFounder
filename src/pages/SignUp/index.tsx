@@ -1,9 +1,11 @@
-import React, { useCallback, useMemo, useState } from 'react';
-import { Image, Platform, ScrollView } from 'react-native';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Platform, ScrollView } from 'react-native';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
 import { Picker } from '@react-native-community/picker';
+import * as ImagePicker from 'expo-image-picker';
+import { useNavigation } from '@react-navigation/native';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -13,6 +15,8 @@ import photo from '../../assets/photoPerfil.png';
 import {
   Container,
   Header,
+  UserAvatarButton,
+  Avatar,
   ContainerForm,
   InputWrapper,
   TextInput,
@@ -25,9 +29,42 @@ import {
 } from './styles';
 
 const SingUp: React.FC = () => {
+  const navigation = useNavigation();
+
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState<boolean>(false);
   const [gender, setGender] = useState<React.ReactText>('');
+  const [userAvatar, setUserAvatar] = useState<string>(
+    'file:/data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FGameFounder-e9152488-9fe6-4adf-b379-acc5fea9fd09/ImagePicker/202a9e7b-4a19-48fe-b54e-56bc5afe9511.jpg'
+  );
+
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const {
+          status,
+        } = await ImagePicker.requestCameraRollPermissionsAsync();
+        console.log(status);
+
+        if (status !== 'granted') {
+          alert('Desculpe, precisamos da permissão da camêra para funcionar!');
+        }
+      }
+    })();
+  }, []);
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      espect: [4, 3], // Especifica a proporção a ser mantida
+      quality: 1,
+    });
+
+    if (!result.cancelled) {
+      setUserAvatar(result.uri);
+    }
+  };
 
   const formattedDate = useMemo(() => {
     return format(date, "dd'/'MM'/'yyyy");
@@ -50,7 +87,13 @@ const SingUp: React.FC = () => {
   return (
     <Container>
       <Header>
-        <Image source={photo} />
+        <UserAvatarButton onPress={pickImage}>
+          {userAvatar !== '' ? (
+            <Avatar source={{ uri: userAvatar }} />
+          ) : (
+            <Avatar source={photo} />
+          )}
+        </UserAvatarButton>
       </Header>
 
       <ScrollView keyboardShouldPersistTaps="handled">
@@ -106,7 +149,7 @@ const SingUp: React.FC = () => {
             <Button children="Cadastrar" />
 
             {/* Cancel Button */}
-            <CancelButton>
+            <CancelButton onPress={() => navigation.goBack()}>
               <CancelButtonText>Cancelar</CancelButtonText>
             </CancelButton>
           </ContainerButton>
