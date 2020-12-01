@@ -34,9 +34,7 @@ const SingUp: React.FC = () => {
   const [date, setDate] = useState(new Date());
   const [show, setShow] = useState<boolean>(false);
   const [gender, setGender] = useState<React.ReactText>('');
-  const [userAvatar, setUserAvatar] = useState<string>(
-    'file:/data/user/0/host.exp.exponent/cache/ExperienceData/%2540anonymous%252FGameFounder-e9152488-9fe6-4adf-b379-acc5fea9fd09/ImagePicker/202a9e7b-4a19-48fe-b54e-56bc5afe9511.jpg'
-  );
+  const [userAvatar, setUserAvatar] = useState<string>('');
 
   useEffect(() => {
     (async () => {
@@ -44,7 +42,6 @@ const SingUp: React.FC = () => {
         const {
           status,
         } = await ImagePicker.requestCameraRollPermissionsAsync();
-        console.log(status);
 
         if (status !== 'granted') {
           alert('Desculpe, precisamos da permissão da camêra para funcionar!');
