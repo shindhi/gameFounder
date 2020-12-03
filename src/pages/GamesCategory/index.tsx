@@ -8,7 +8,9 @@ import ListGames from './components/ListGames';
 import {
   ContainerModal,
   ModalView,
+  HeaderModal,
   ModalTitle,
+  ModalButtonClose,
   InputGroups,
   InputGroupsText,
   InputModal,
@@ -45,7 +47,12 @@ const GamesCategory: React.FC = () => {
         >
           <ContainerModal>
             <ModalView>
-              <ModalTitle>Filtro</ModalTitle>
+              <HeaderModal>
+                <ModalTitle>Filtro</ModalTitle>
+                <ModalButtonClose onPress={() => setIsModalOpen(!isModalOpen)}>
+                  <MaterialCommunityIcons name="close" color="#fff" size={26} />
+                </ModalButtonClose>
+              </HeaderModal>
 
               <InputGroups>
                 <InputGroupsText>Nome do jogo</InputGroupsText>

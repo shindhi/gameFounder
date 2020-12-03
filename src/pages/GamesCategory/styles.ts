@@ -27,13 +27,21 @@ export const ModalView = styled.View`
   background: #292a2b;
 `;
 
+export const HeaderModal = styled.View`
+  margin-bottom: 20px;
+
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const ModalTitle = styled.Text`
   color: #fff;
   font-family: roboto_700;
   font-size: 25px;
-
-  margin-bottom: 20px;
 `;
+
+export const ModalButtonClose = styled.TouchableOpacity``;
 
 export const InputGroups = styled.View`
   margin-bottom: 20px;
