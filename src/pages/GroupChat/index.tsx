@@ -4,6 +4,7 @@ import * as ImagePicker from 'expo-image-picker';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FeatherIcon from 'react-native-vector-icons/Feather';
 import { Picker } from '@react-native-community/picker';
+import { useNavigation } from '@react-navigation/native';
 
 import Game from '../../assets/lol.png';
 
@@ -30,6 +31,8 @@ import {
 } from './styles';
 
 const GroupChat: React.FC = () => {
+  const navigation = useNavigation();
+
   const [groupImage, setGroupImage] = useState<string>('');
   const [numberOfVacancies, setNumberOfVacancies] = useState<React.ReactText>('');
   const [groupStatus, setGroupStatus] = useState<string>('');
@@ -68,7 +71,7 @@ const GroupChat: React.FC = () => {
         <ReturnButton>
           <MaterialCommunityIcons name="arrow-left" color="#fff" size={26} />
         </ReturnButton>
-        
+
         <Title>Criar Grupo</Title>
       </Header>
 
@@ -80,14 +83,12 @@ const GroupChat: React.FC = () => {
             <ImageGroup source={Game} />
           )}
         </ImageGroupButton>
-        <NameGroup>
-          LoL
-        </NameGroup>
+        <NameGroup>LoL</NameGroup>
       </WrapperImageGroup>
 
       <WrapperFormGroup>
         <TitleVacancy>Número de vagas:</TitleVacancy>
-        
+
         <SelectNumber>
           <Picker
             selectedValue={numberOfVacancies}
@@ -100,7 +101,9 @@ const GroupChat: React.FC = () => {
               backgroundColor: '#000',
               color: '#fff',
             }}
-            onValueChange={(vacancyValue, _) => setNumberOfVacancies(vacancyValue)}
+            onValueChange={(vacancyValue, _) =>
+              setNumberOfVacancies(vacancyValue)
+            }
           >
             <Picker.Item label="1" value="1" />
             <Picker.Item label="2" value="2" />
@@ -115,18 +118,32 @@ const GroupChat: React.FC = () => {
         <TitlePrivacy>Privacidade</TitlePrivacy>
         <WrapperButtons>
           <Private onPress={() => setGroupStatus('private')}>
-            <FeatherIcon name="lock" size={20} color={groupStatus !== 'private' ? '#7D7D7F' : 'rgba(255, 0, 0, 0.5)'} />
+            <FeatherIcon
+              name="lock"
+              size={20}
+              color={
+                groupStatus !== 'private' ? '#7D7D7F' : 'rgba(255, 0, 0, 0.5)'
+              }
+            />
             <ButtonText>Fechado</ButtonText>
           </Private>
 
           <NotPrivate onPress={() => setGroupStatus('notPrivate')}>
-            <FeatherIcon name="unlock" size={20} color={groupStatus !== 'notPrivate' ? '#7D7D7F' : 'rgba(59, 227, 0, 0.5)'} />
+            <FeatherIcon
+              name="unlock"
+              size={20}
+              color={
+                groupStatus !== 'notPrivate'
+                  ? '#7D7D7F'
+                  : 'rgba(59, 227, 0, 0.5)'
+              }
+            />
             <ButtonText>Aberto</ButtonText>
           </NotPrivate>
         </WrapperButtons>
       </WrapperFormGroup>
 
-      <CreateButton>
+      <CreateButton onPress={() => navigation.navigate('PrivateChat')}>
         <CreateButtonText>Criar</CreateButtonText>
       </CreateButton>
     </Container>
