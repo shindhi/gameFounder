@@ -3,7 +3,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
-import User1 from '../../assets/user1.png';
+import Profile02 from '../../assets/profile02.png';
 
 import {
   Header,
@@ -78,7 +78,7 @@ const PrivateChat: React.FC = () => {
           <MaterialCommunityIcons name="arrow-left" color="#fff" size={26} />
         </ReturnButton>
 
-        <UserImage source={User1} />
+        <UserImage source={Profile02} />
 
         <UserName>User X</UserName>
       </Header>

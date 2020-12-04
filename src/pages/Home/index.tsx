@@ -2,6 +2,9 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import Valorant from '../../assets/valorant.png';
+import AimLab from '../../assets/aimLab.png';
+import CsGo from '../../assets/csNews.png';
+import Mundial from '../../assets/mundial.png';
 
 import {
   Container,
@@ -39,7 +42,7 @@ const Home: React.FC = () => {
         </ContainerNews>
 
         <ContainerNews>
-          <ImageNews source={Valorant} />
+          <ImageNews source={AimLab} />
           <WrapperText>
             <TitleNews>Title</TitleNews>
             <BriefDescription>Lorem inpsum</BriefDescription>
@@ -47,7 +50,7 @@ const Home: React.FC = () => {
         </ContainerNews>
 
         <ContainerNews>
-          <ImageNews source={Valorant} />
+          <ImageNews source={CsGo} />
           <WrapperText>
             <TitleNews>Title</TitleNews>
             <BriefDescription>Lorem inpsum</BriefDescription>
@@ -55,7 +58,7 @@ const Home: React.FC = () => {
         </ContainerNews>
 
         <ContainerNews>
-          <ImageNews source={Valorant} />
+          <ImageNews source={Mundial} />
           <WrapperText>
             <TitleNews>Title</TitleNews>
             <BriefDescription>Lorem inpsum</BriefDescription>
@@ -63,7 +66,7 @@ const Home: React.FC = () => {
         </ContainerNews>
 
         <ContainerNews>
-          <ImageNews source={Valorant} />
+          <ImageNews source={CsGo} />
           <WrapperText>
             <TitleNews>Title</TitleNews>
             <BriefDescription>Lorem inpsum</BriefDescription>

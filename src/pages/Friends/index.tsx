@@ -1,7 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import User1 from '../../assets/user1.png';
+import Profile02 from '../../assets/profile02.png';
+import Profile03 from '../../assets/profiel03.png';
+import Profile04 from '../../assets/profile04.png';
 
 import {
   Container,
@@ -26,7 +28,7 @@ const Friends: React.FC = () => {
       {/* Listagem de amigos */}
       <ListFriends>
         <NewChatButton onPress={() => navigation.navigate('PrivateChat')}>
-          <FriendImage source={User1} />
+          <FriendImage source={Profile02} />
 
           <Friend>
             <FriendName>User X</FriendName>
@@ -34,7 +36,7 @@ const Friends: React.FC = () => {
         </NewChatButton>
 
         <NewChatButton onPress={() => navigation.navigate('PrivateChat')}>
-          <FriendImage source={User1} />
+          <FriendImage source={Profile03} />
 
           <Friend>
             <FriendName>User X</FriendName>
@@ -42,7 +44,7 @@ const Friends: React.FC = () => {
         </NewChatButton>
 
         <NewChatButton onPress={() => navigation.navigate('PrivateChat')}>
-          <FriendImage source={User1} />
+          <FriendImage source={Profile04} />
 
           <Friend>
             <FriendName>User X</FriendName>

@@ -2,7 +2,10 @@ import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
-import LeagueOfLegends from '../../assets/lol.png';
+import LeagueOfLegends from '../../../../assets/lol.png';
+import AmoungUs from '../../../../assets/amoungUs.png';
+import Valorant from '../../../../assets/valorantIcon.png';
+import CSGO from '../../../../assets/csgoIcon.png';
 
 import {
   Container,
@@ -38,29 +41,29 @@ const FilteredGames: React.FC = () => {
               <GameTitle numberOfLines={1}>League of Legends</GameTitle>
             </GameWrapper>
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={Valorant} />
+              <GameTitle numberOfLines={1}>Valorant</GameTitle>
             </GameWrapper>
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={CSGO} />
+              <GameTitle numberOfLines={1}>Cs Go</GameTitle>
             </GameWrapper>
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={AmoungUs} />
+              <GameTitle numberOfLines={1}>Amoung Us</GameTitle>
             </GameWrapper>
 
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={AmoungUs} />
+              <GameTitle numberOfLines={1}>Amoung Us</GameTitle>
             </GameWrapper>
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={Valorant} />
+              <GameTitle numberOfLines={1}>Valorant</GameTitle>
             </GameWrapper>
             <GameWrapper>
-              <GameImage source={LeagueOfLegends} />
-              <GameTitle numberOfLines={1}>League of Legends</GameTitle>
+              <GameImage source={CSGO} />
+              <GameTitle numberOfLines={1}>Cs Go</GameTitle>
             </GameWrapper>
             <GameWrapper>
               <GameImage source={LeagueOfLegends} />
