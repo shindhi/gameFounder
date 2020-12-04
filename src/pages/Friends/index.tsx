@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 import Profile02 from '../../assets/profile02.png';
-import Profile03 from '../../assets/profiel03.png';
+import Profile03 from '../../assets/profile03.png';
 import Profile04 from '../../assets/profile04.png';
 
 import {

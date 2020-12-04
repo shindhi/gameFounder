@@ -9,7 +9,7 @@ import GroupChat from '../pages/GroupChat';
 import Friends from '../pages/Friends';
 import EditProfile from '../pages/EditProfile';
 import News from '../pages/News';
-// import FilteredGames from '../pages/FilteredGames';
+import FilteredGames from '../pages/FilteredGames';
 
 import AppTabs from './AppTabs';
 
@@ -36,7 +36,7 @@ const AuthRoutes: React.FC = () => (
     <Auth.Screen name="PrivateChat" component={PrivateChat} />
     <Auth.Screen name="GroupChat" component={GroupChat} />
     <Auth.Screen name="Friends" component={Friends} />
-    {/* <Auth.Screen name="FilteredGames" component={FilteredGames} /> */}
+    <Auth.Screen name="FilteredGames" component={FilteredGames} />
   </Auth.Navigator>
 );
 

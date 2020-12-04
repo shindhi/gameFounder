@@ -3,9 +3,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { FloatingAction } from 'react-native-floating-action';
 import { useNavigation } from '@react-navigation/native';
 
-import User1 from '../../assets/user1.png';
-import User2 from '../../assets/user2.png';
-import LeagueOfLegends from '../../assets/lol.png';
+import Profile02 from '../../assets/profile02.png';
+import Profile03 from '../../assets/profile03.png';
 
 import {
   Container,
@@ -62,7 +61,7 @@ const Chat: React.FC = () => {
 
       <ListChat>
         <ChatContainer onPress={() => navigation.navigate('PrivateChat')}>
-          <ChatImage source={User1} />
+          <ChatImage source={Profile02} />
 
           <ChatInformation>
             <ChatName>User X</ChatName>
@@ -71,7 +70,7 @@ const Chat: React.FC = () => {
         </ChatContainer>
 
         <ChatContainer>
-          <ChatImage source={User2} />
+          <ChatImage source={Profile03} />
 
           <ChatInformation>
             <ChatName>Group name</ChatName>

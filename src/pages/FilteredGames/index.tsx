@@ -2,10 +2,10 @@ import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useNavigation } from '@react-navigation/native';
 
-import LeagueOfLegends from '../../../../assets/lol.png';
-import AmoungUs from '../../../../assets/amoungUs.png';
-import Valorant from '../../../../assets/valorantIcon.png';
-import CSGO from '../../../../assets/csgoIcon.png';
+import LeagueOfLegends from '../../assets/lol.png';
+import AmoungUs from '../../assets/amoungUs.png';
+import Valorant from '../../assets/valorantIcon.png';
+import CSGO from '../../assets/csgoIcon.png';
 
 import {
   Container,
